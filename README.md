@@ -3,7 +3,7 @@
 Arcade *space shooter* jogável no navegador, feito com **React + TypeScript + PixiJS**.
 Sobreviva às ondas de inimigos, colete power-ups e suba no ranking.
 
-**▶️ Jogar:** _(link do GitHub Pages entra aqui após o deploy)_
+**▶️ Jogar:** https://gma-gustavo.github.io/neon-vanguard/
 
 ![stack](https://img.shields.io/badge/React-18-38bdf8) ![stack](https://img.shields.io/badge/TypeScript-5-3178c6) ![stack](https://img.shields.io/badge/PixiJS-8-ff3ea5)
 
@@ -42,13 +42,9 @@ npm run preview
 
 ## 📦 Deploy (GitHub Pages)
 
-O `vite.config.ts` usa `base: './'`, então o build funciona em qualquer subpasta do Pages.
+O deploy é automático via **GitHub Actions** ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)): a cada push na `main`, o workflow roda `npm ci` + `npm run build` (que inclui a checagem de tipos com `tsc --noEmit`) e publica a pasta `dist` no GitHub Pages.
 
-```bash
-npm run deploy
-```
-
-(usa o pacote `gh-pages` para publicar a pasta `dist` na branch `gh-pages`)
+O `vite.config.ts` usa `base: './'`, então o build funciona em qualquer subpasta do Pages (ex.: `/neon-vanguard/`).
 
 ---
 
